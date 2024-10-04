@@ -48,4 +48,4 @@ with st.expander('Input Feature'):
 # Encode
 encode = ['Grouping_country', 'reservation_status']
 df_hotels = pd.get_dummies(input_cshotel, prefix=encode) 
-df_hotels[:]
+df_hotels[:1]
