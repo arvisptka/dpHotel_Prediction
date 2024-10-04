@@ -29,6 +29,15 @@ with st.expander('📊 Data Visualization'):
 with st.sidebar:
   Grouping_country = st.selectbox('Benua', ('Eropa', 'USA', 'Others', 'Asia'))
   reservation_status = st.selectbox('Status Reservasi', ('Check-Out', 'Canceled', 'No-Show'))	
-  total_bermalam = st.slider('total_bermalam', 1, 15, 55)
+  total_bermalam = st.slider('Total Mennginap', 1, 15, 55)
   st.write("Total menginap", total_bermalam, "Malam")
+
+  #Create dataframe for the input feature
+  data = {'Grouping_country': Grouping_country,
+          'reservation_status': reservation_status,
+          'total_bermalam': total_bermalam}
+  input_df = pd.DataFrame(data, index[0])
+  input_cshotel = pd.concat([input_df, X], axis = 0)
+input_df
+  
   
