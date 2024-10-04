@@ -8,7 +8,7 @@ st.info('This is fisrt project machine learning with prediction')
 # dropdown dataset
 with st.expander('📁 Dataset Reservation'):
   df = pd.read_csv("https://raw.githubusercontent.com/arvisptka/Hotel_cancellationPrediction/refs/heads/main/Hotel%20Analysis%20Cancellation/datahotel_ec%2B.csv")
-  df = df.drop(['meal','arrival_date_month','hotel', 'country', 'reserved_room_type', 'assigned_room_type'], axis = 1)
+  df = df.drop(['meal', 'agent', 'arrival_date_month', 'hotel', 'country', 'reserved_room_type', 'assigned_room_type'], axis = 1)
   df
 
   st.write(" Feature X ")
