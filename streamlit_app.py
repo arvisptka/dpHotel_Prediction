@@ -71,8 +71,6 @@ rf.fit(X, y)
 prediksi = rf.predict(input_row)
 predik_proba = rf.predict_proba(input_row)
 
-predik_proba
-
 df_prediksi_proba = pd.DataFrame(predik_proba)
 df_prediksi_proba.columns = [0,1]
 df_prediksi_proba.rename(columns = {0 : 'Not Cancel',
