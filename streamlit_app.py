@@ -19,4 +19,4 @@ with st.expander('📁 Dataset Reservation'):
   y
 
 with st.expander('📊 Data Visualization'):
-  st.scatter_chart(data = df, x = 'lead_time', y = ', color = 'is_canceled')
+  st.scatter_chart(data = df, x = 'lead_time', y = 'adr', color = 'is_canceled')
