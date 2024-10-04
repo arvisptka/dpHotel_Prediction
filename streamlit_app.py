@@ -19,4 +19,8 @@ with st.expander('📁 Dataset Reservation'):
   y
 
 with st.expander('📊 Data Visualization'):
+  st.write('Lead time ADR')
   st.scatter_chart(data = df, x = 'lead_time', y = 'adr', color = 'is_canceled')
+
+  st.write('Total Pengunjung ADR')
+  st.scatter_chart(data = df, x = 'total_pengunjung', y = 'adr', color = 'is_canceled')
