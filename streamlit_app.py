@@ -47,6 +47,6 @@ with st.expander('Input Feature'):
   input_cshotel
 
 # Encode
-encode = ['market_segment','distribution_channel','deposit_type',	'customer_type',	'reservation_status',	'Grouping_country']
+encode = [('market_segment','distribution_channel','deposit_type',	'customer_type',	'reservation_status',	'Grouping_country')]
 df_hotels = pd.get_dummies(input_cshotel, prefix=encode)
 df_hotels[:6]
