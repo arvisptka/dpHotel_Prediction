@@ -8,7 +8,7 @@ st.info('This is fisrt project machine learning with prediction')
 # dropdown dataset
 with st.expander('📁 Dataset Reservation'):
   df = pd.read_csv("https://raw.githubusercontent.com/arvisptka/Hotel_cancellationPrediction/refs/heads/main/Hotel%20Analysis%20Cancellation/datahotel_ec%2B.csv")
-  df = df.drop(['hotel',	'arrival_date_month',	'meal',	'country', 'reserved_room_type',	'assigned_room_type'], axis = 1)
+  df = df.drop(['hotel','arrival_date_month','meal','country','reserved_room_type','assigned_room_type'], axis = 1)
   df
 
   st.write(" Feature X ")
@@ -47,6 +47,6 @@ with st.expander('Input Feature'):
   input_cshotel
 
 # Encode
-encode = ['market_segment',	'distribution_channel', 'deposit_type',	'customer_type',	'reservation_status',	'Grouping_country']
+encode = ['market_segment','distribution_channel','deposit_type',	'customer_type',	'reservation_status',	'Grouping_country']
 df_hotels = pd.get_dummies(input_cshotel, prefix=encode)
-df_hotels[:1]
+df_hotels[:6]
