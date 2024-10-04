@@ -24,3 +24,6 @@ with st.expander('📊 Data Visualization'):
 
   st.write('Total Pengunjung ADR')
   st.scatter_chart(data = df, x = 'total_bermalam', y = 'adr', color = 'is_canceled')
+
+  st.write('Total Pengunjung ADR')
+  st.scatter_chart(data = df, x = 'total_bermalam', y = 'adr', color = 'reservation_status')
