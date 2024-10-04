@@ -1,4 +1,5 @@
 import streamlit as st
+import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
@@ -68,6 +69,7 @@ rf.fit(X, y)
 ## Apply model to make prediction
 prediksi = rf.predict(input_row)
 predik_proba = rf.predict_proba(input_row)
+
 predik_proba
 
 #df_prediksi_proba = pd.DataFrame(predik_proba)
