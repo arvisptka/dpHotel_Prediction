@@ -27,8 +27,8 @@ with st.expander('📊 Data Visualization'):
 
 # Data Preparation  
 with st.sidebar:
-  benua = st.selectbox('Grouping_country : Benua', ('Eropa', 'USA', 'Others', 'Asia'))
-  market = st.selectbox('reservation_status', ('Check-Out', 'Canceled', 'No-Show'))	
+  Grouping_country = st.selectbox('Benua', ('Eropa', 'USA', 'Others', 'Asia'))
+  reservation_status = st.selectbox('Status Reservasi', ('Check-Out', 'Canceled', 'No-Show'))	
   total_bermalam = st.slider('total_bermalam', 1, 15, 55)
   st.write("Total menginap", total_bermalam, "Malam")
   
