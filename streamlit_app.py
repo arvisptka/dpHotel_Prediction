@@ -38,6 +38,11 @@ with st.sidebar:
           'total_bermalam': total_bermalam}
   input_df = pd.DataFrame(data, index=[0])
   input_cshotel = pd.concat([input_df, X], axis = 0)
-input_cshotel
+
+with st.expander('Input Feature'):
+  st.write('Input Hotel')
+  input_df
+  st.write('Combine Hotel Data')
+  input_cshotel
   
   
