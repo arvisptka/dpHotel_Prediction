@@ -36,7 +36,7 @@ with st.sidebar:
   data = {'Grouping_country': Grouping_country,
           'reservation_status': reservation_status,
           'total_bermalam': total_bermalam}
-  input_df = pd.DataFrame(data, index[0])
+  input_df = pd.DataFrame(data, index=[0])
   input_cshotel = pd.concat([input_df, X], axis = 0)
 input_df
   
