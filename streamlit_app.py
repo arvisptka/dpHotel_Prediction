@@ -44,5 +44,9 @@ with st.expander('Input Feature'):
   input_df
   st.write('Combine Hotel Data')
   input_cshotel
+
+# Encode
+encode = ['Grouping_country', 'reservation_status']
+df_hotels = pd.get_dummies(input_cshotel, prefix = encode)
   
   
