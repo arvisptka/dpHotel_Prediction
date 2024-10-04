@@ -75,4 +75,26 @@ df_prediksi_proba = pd.DataFrame(predik_proba)
 df_prediksi_proba.columns = ['Not Cancel','Cancel']
 df_prediksi_proba.rename(columns = {0 : 'Not Cancel',
                                      1 : 'Cancel'})
-df_prediksi_proba
+#df_prediksi_proba
+# Display prediction Cancellation
+st.subheader('Predicted Cancellation')
+st.dataframe(df_prediksi_proba,
+             column_config={
+               'Not Cancel': st.column_config.ProgressColumn(
+                 'Not Cancel',
+                 format='%f',
+                 width='medium',
+                 min_value=0,
+                 max_value=1
+               ),
+               'Cancel': st.column_config.ProgressColumn(
+                 'Cancel',
+                 format='%f',
+                 width='medium',
+                 min_value=0,
+                 max_value=1
+               ),
+             }, hide_index=True)
+
+hotel_cancel = np.array(['Not Cancel', 'Cancel'])
+st.success(str(hotel_cancel[prediksi][0]))
