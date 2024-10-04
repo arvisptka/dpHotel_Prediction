@@ -13,7 +13,7 @@ with st.expander('📁 Dataset Reservation'):
   df = df.drop(['hotel','arrival_date_month','meal','country','reserved_room_type','assigned_room_type'], axis = 1)
 
   st.write(" Feature X ")
-  X_Raw = df.drop('is_canceled', axis = 1)
+  X_Raw = df.drop(['is_canceled, reservation_status_date'], axis = 1)
   X_Raw
 
   st.write(' Target Y')
