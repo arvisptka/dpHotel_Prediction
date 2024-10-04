@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+from imblearn.over_sampling import SMOTE
+from sklearn.ensemble import RandomForestClassifier
 
 st.title('🏨 Hotel Machine Learning 🏨')
 
@@ -25,8 +27,9 @@ with st.expander('📊 Data Visualization'):
   st.write('Total Pengunjung ADR')
   st.scatter_chart(data = df, x = 'total_bermalam', y = 'adr', color = 'is_canceled')
 
-# Data Preparation  
+# Input Features  
 with st.sidebar:
+  st.header('Input Features')
   Grouping_country = st.selectbox('Benua', ('Eropa', 'USA', 'Others', 'Asia'))
   reservation_status = st.selectbox('Status Reservasi', ('Check-Out', 'Canceled', 'No-Show'))	
   total_bermalam = st.slider('Total Mennginap', 1, 15, 55)
@@ -45,7 +48,33 @@ with st.expander('Input Feature'):
   st.write('Combine Hotel Data')
   input_cshotel
 
-# Encode
+# Data Preparation
+# Encode X
 encode = ['Grouping_country', 'reservation_status', 'market_segment', 'distribution_channel', 'deposit_type', 'customer_type']
 df_hotels = pd.get_dummies(input_cshotel, columns=encode)
-df_hotels[:1]
+X = df_hotels[1:]
+input_row = df_hotels[:1]
+
+with st.expander('Data Preparation'):
+  st.write('Encode X (Input Hotel')
+  input_row
+  st.write('Y Target')
+  y
+
+# Oversampling SMOTE
+smote = SMOTE(random_state=42)
+X, y = smote.fit_resample(X, y)
+
+# Model Training 
+## Train ML RandomForest
+rf = RandomForestClassifier()
+rf.fit(X, y)
+
+## Apply model to make prediction
+prediksi = rf.predict(input_row)
+predik_proba = rf.predict_proba(input_row)
+predik_proba
+
+#df_prediksi_proba = pd.DataFrame(predik_proba)
+#df_prediksi_proba.columns = [0,1]
+#df_prediksi_proba.rename
