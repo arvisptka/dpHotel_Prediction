@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from imblearn.over_sampling import SMOTE
 from sklearn.ensemble import RandomForestClassifier
 
 st.title('🏨 Hotel Machine Learning 🏨')
@@ -60,10 +59,6 @@ with st.expander('Data Preparation'):
   input_row
   st.write('Y Target')
   y
-
-# Oversampling SMOTE
-smote = SMOTE(random_state=42)
-X, y = smote.fit_resample(X, y)
 
 # Model Training 
 ## Train ML RandomForest
