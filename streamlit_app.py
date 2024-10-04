@@ -6,6 +6,14 @@ st.title('🏨 Hotel Machine Learning 🏨')
 st.info('This is fisrt project machine learning with prediction')
 
 # load dataset
-with st.expander(':data Dataset Reservation'):
+with st.expander('📁 Dataset Reservation'):
   df = pd.read_csv("https://raw.githubusercontent.com/arvisptka/Hotel_cancellationPrediction/refs/heads/main/Hotel%20Analysis%20Cancellation/datahotel_ec%2B.csv")
   df
+
+  st.write(" Feature X ")
+  X = df.drop('is_canceled', axis = 1)
+  X
+
+  st.write(' Target Y')
+  y = df.is_canceled
+  y
