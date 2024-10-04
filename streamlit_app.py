@@ -72,7 +72,7 @@ prediksi = rf.predict(input_row)
 predik_proba = rf.predict_proba(input_row)
 
 df_prediksi_proba = pd.DataFrame(predik_proba)
-df_prediksi_proba.columns = [0,1]
+df_prediksi_proba.columns = ['Not Cancel','Cancel']
 df_prediksi_proba.rename(columns = {0 : 'Not Cancel',
                                      1 : 'Cancel'})
 df_prediksi_proba
