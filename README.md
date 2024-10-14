@@ -7,8 +7,7 @@ Build a predictive model to predict whether customers will cancel bookings and p
 ## Steps:
 - Analyze with business questions to strengthen business insights
 - Conduct basic Exploratory data analysis
-- Analyze features related to cancellations (e.g., booking time, length of stay, special requests)
-- Conduct modeling using Logistic Regression, Random Forest, Decision Tree and XGBoost Classifier models with AUC-ROC, Precision, Recall and F1 Score metrics
+- Conduct modeling using Decision Tree models
 - Conduct model interpretation to analyze features that affect whether or not a reservation is canceled.
 
 ### Business Value:
